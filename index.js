@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -31,6 +32,13 @@ async function run() {
         const result = await postCollection.find().toArray();
         res.send(result);
     })
+
+    app.post('/PostCollection', async (req, res) => {
+      const item = req.body;
+      console.log(item);
+      const result = await postCollection.insertOne(item);
+      res.send(result);
+  });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });

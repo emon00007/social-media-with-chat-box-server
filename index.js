@@ -39,12 +39,12 @@ async function run() {
       const result = await postCollection.insertOne(item);
       res.send(result);
   });
-    app.post('/PostCollection', async (req, res) => {
-      const item = req.body;
-      console.log(item);
-      const result = await postCollection.insertOne(item);
-      res.send(result);
-  });
+  //   app.post('/PostCollection', async (req, res) => {
+  //     const item = req.body;
+  //     console.log(item);
+  //     const result = await postCollection.insertOne(item);
+  //     res.send(result);
+  // });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
